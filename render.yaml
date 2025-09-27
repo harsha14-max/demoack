@@ -1,4 +1,26 @@
 services:
+  # Main Application Service (Entry Point)
+  - type: web
+    name: bsm-main-app
+    env: node
+    plan: free
+    buildCommand: npm install && npm run build --workspace=@bsm/main-app
+    startCommand: npm run start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: SERVICE
+        value: main-app
+      - key: NEXT_PUBLIC_SUPABASE_URL
+        value: https://zrxoiqhivfkgzvyoobki.supabase.co
+      - key: NEXT_PUBLIC_SUPABASE_ANON_KEY
+        value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InpyeG9pcWhpdmZrZ3p2eW9vYmtpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzUzMjQ4MDAsImV4cCI6MjA1MDkwMDgwMH0.YourAnonKeyHere
+      - key: NEXT_PUBLIC_CUSTOMER_URL
+        value: https://bsm-customer-portal.onrender.com
+      - key: NEXT_PUBLIC_ADMIN_URL
+        value: https://bsm-admin-dashboard.onrender.com
+    healthCheckPath: /
+    
   # Customer Portal Service
   - type: web
     name: bsm-customer-portal
