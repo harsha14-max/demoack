@@ -1,0 +1,32 @@
+services:
+  # Customer Portal Service
+  - type: web
+    name: bsm-customer-portal
+    env: node
+    plan: free
+    buildCommand: npm install && npm run build --workspace=@bsm/customer-portal
+    startCommand: cd apps/customer-portal && npm run start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: NEXT_PUBLIC_SUPABASE_URL
+        value: https://zrxoiqhivfkgzvyoobki.supabase.co
+      - key: NEXT_PUBLIC_SUPABASE_ANON_KEY
+        value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InpyeG9pcWhpdmZrZ3p2eW9vYmtpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzUzMjQ4MDAsImV4cCI6MjA1MDkwMDgwMH0.YourAnonKeyHere
+    healthCheckPath: /
+    
+  # Admin Dashboard Service  
+  - type: web
+    name: bsm-admin-dashboard
+    env: node
+    plan: free
+    buildCommand: npm install && npm run build --workspace=@bsm/admin-dashboard
+    startCommand: cd apps/admin-dashboard && npm run start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: NEXT_PUBLIC_SUPABASE_URL
+        value: https://zrxoiqhivfkgzvyoobki.supabase.co
+      - key: NEXT_PUBLIC_SUPABASE_ANON_KEY
+        value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InpyeG9pcWhpdmZrZ3p2eW9vYmtpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzUzMjQ4MDAsImV4cCI6MjA1MDkwMDgwMH0.YourAnonKeyHere
+    healthCheckPath: /
