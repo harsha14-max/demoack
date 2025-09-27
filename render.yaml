@@ -5,10 +5,12 @@ services:
     env: node
     plan: free
     buildCommand: npm install && npm run build --workspace=@bsm/customer-portal
-    startCommand: cd apps/customer-portal && npm run start
+    startCommand: npm run start
     envVars:
       - key: NODE_ENV
         value: production
+      - key: SERVICE
+        value: customer-portal
       - key: NEXT_PUBLIC_SUPABASE_URL
         value: https://zrxoiqhivfkgzvyoobki.supabase.co
       - key: NEXT_PUBLIC_SUPABASE_ANON_KEY
@@ -21,10 +23,12 @@ services:
     env: node
     plan: free
     buildCommand: npm install && npm run build --workspace=@bsm/admin-dashboard
-    startCommand: cd apps/admin-dashboard && npm run start
+    startCommand: npm run start
     envVars:
       - key: NODE_ENV
         value: production
+      - key: SERVICE
+        value: admin-dashboard
       - key: NEXT_PUBLIC_SUPABASE_URL
         value: https://zrxoiqhivfkgzvyoobki.supabase.co
       - key: NEXT_PUBLIC_SUPABASE_ANON_KEY

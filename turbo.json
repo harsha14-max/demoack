@@ -10,7 +10,10 @@
     },
     "lint": {},
     "test": {},
-    "start": {}
+    "start": {
+      "cache": false,
+      "env": ["PORT", "NODE_ENV", "NEXT_PUBLIC_SUPABASE_URL", "NEXT_PUBLIC_SUPABASE_ANON_KEY"]
+    }
   }
 }
 

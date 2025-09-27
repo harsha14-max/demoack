@@ -17,7 +17,7 @@
     "lint": "turbo run lint",
     "test": "turbo run test",
     "format": "turbo run format",
-    "start": "turbo run start",
+    "start": "node start.js",
     "prepare": "husky install"
   },
   "dependencies": {
