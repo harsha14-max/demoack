@@ -304,12 +304,6 @@ export const customerAssetService = {
 // Customer Dashboard Analytics
 export const customerAnalyticsService = {
   async getMyDashboardStats(userId: string) {
-    if (isDemo) {
-      const { data, error } = await service.getDashboardAnalytics();
-      if (error) throw error;
-      return data;
-    }
-    
     const [
       ticketsResult,
       openTicketsResult,

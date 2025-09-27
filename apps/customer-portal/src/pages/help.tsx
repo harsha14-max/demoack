@@ -248,12 +248,12 @@ export default function HelpPage() {
                   <h3 className="text-lg font-semibold">{method.title}</h3>
                 </div>
                 <p className="text-white/90 mb-4">{method.description}</p>
-                {method.href ? (
+                {(method as any).href ? (
                   <Link
-                    href={method.href}
+                    href={(method as any).href}
                     className="inline-flex items-center text-white font-medium hover:text-white/80 transition-colors"
                   >
-                    {method.action}
+                    {(method as any).action || 'Learn More'}
                     <ExternalLink className="w-4 h-4 ml-2" />
                   </Link>
                 ) : (

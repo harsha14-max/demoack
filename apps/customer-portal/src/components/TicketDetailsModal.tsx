@@ -234,7 +234,7 @@ export default function TicketDetailsModal({ isOpen, onClose, ticket, onUpdate, 
                         </span>
                       )}
                     </div>
-                    <span className="text-xs text-gray-500 dark:text-zinc-500">{formatDate(comment.timestamp)}</span>
+                    <span className="text-xs text-gray-500 dark:text-zinc-500">{formatDate(comment.createdAt)}</span>
                   </div>
                   <p className="text-gray-900 dark:text-zinc-100 whitespace-pre-wrap">{comment.content}</p>
                 </div>

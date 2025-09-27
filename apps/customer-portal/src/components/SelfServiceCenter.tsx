@@ -63,7 +63,10 @@ const SelfServiceCenter: React.FC<SelfServiceCenterProps> = ({
 
   const handleScheduleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    onScheduleAppointment(newAppointment);
+    onScheduleAppointment({
+      ...newAppointment,
+      status: 'scheduled' as const
+    });
     setNewAppointment({
       title: '',
       date: '',

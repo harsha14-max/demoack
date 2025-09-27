@@ -121,7 +121,7 @@ export default function TicketsPage() {
     // Search filter
     if (searchQuery) {
       filtered = filtered.filter(ticket =>
-        ticket.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        ticket.subject.toLowerCase().includes(searchQuery.toLowerCase()) ||
         ticket.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
         ticket.id.toLowerCase().includes(searchQuery.toLowerCase())
       );
@@ -161,7 +161,9 @@ export default function TicketsPage() {
       const { start, end } = advancedFilters.dateRange;
       filtered = filtered.filter(ticket => {
         const ticketDate = new Date(ticket.createdAt);
-        return ticketDate >= start && ticketDate <= end;
+        const startDate = new Date(start);
+        const endDate = new Date(end);
+        return ticketDate >= startDate && ticketDate <= endDate;
       });
     }
 
@@ -400,7 +402,7 @@ export default function TicketsPage() {
                     <div className="flex-1">
                       <div className="flex items-center gap-3 mb-2">
                         <h3 className="text-lg font-medium text-gray-900 dark:text-zinc-100">
-                          {ticket.title}
+                          {ticket.subject}
                         </h3>
                         <span className={`px-2 py-1 rounded-full text-xs font-medium ${getStatusColor(ticket.status)}`}>
                           {statusOptions.find(opt => opt.id === ticket.status)?.label}
@@ -612,7 +614,10 @@ export default function TicketsPage() {
       {showDetailsModal && selectedTicket && (
         <TicketDetailsModal
           ticket={selectedTicket}
+          isOpen={showDetailsModal}
           onClose={() => setShowDetailsModal(false)}
+          onUpdate={() => {}}
+          onAddComment={() => {}}
         />
       )}
 

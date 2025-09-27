@@ -142,7 +142,7 @@ export default function Services() {
       let aValue = a[sortBy as keyof typeof a];
       let bValue = b[sortBy as keyof typeof b];
       
-      if (typeof aValue === 'string') {
+      if (typeof aValue === 'string' && typeof bValue === 'string') {
         aValue = aValue.toLowerCase();
         bValue = bValue.toLowerCase();
       }

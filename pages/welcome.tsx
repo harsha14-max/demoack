@@ -6,8 +6,8 @@ import { createClient } from '@supabase/supabase-js';
 import { User, LogOut, Mail, Lock, ArrowRight, Home } from 'lucide-react';
 
 // Supabase client
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!;
-const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!;
+const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || 'https://zrxoiqhivfkgzvyoobki.supabase.co';
+const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InpyeG9pcWhpdmZrZ3p2eW9vYmtpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzUzMjQ4MDAsImV4cCI6MjA1MDkwMDgwMH0.YourAnonKeyHere';
 const supabase = createClient(supabaseUrl, supabaseAnonKey);
 
 const WelcomePage: React.FC = () => {
@@ -74,8 +74,8 @@ const WelcomePage: React.FC = () => {
   return (
     <>
       <Head>
-        <title>DemoAck - BSM Platform Demo</title>
-        <meta name="description" content="BSM Platform Demo - Welcome" />
+        <title>Ackermann Platform</title>
+        <meta name="description" content="Ackermann Platform - Welcome" />
       </Head>
 
       <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
@@ -85,7 +85,7 @@ const WelcomePage: React.FC = () => {
             <div className="flex justify-between items-center py-6">
               <div className="flex items-center">
                 <div className="flex-shrink-0">
-                  <h1 className="text-2xl font-bold text-gray-900">DemoAck - BSM Platform</h1>
+                  <h1 className="text-2xl font-bold text-gray-900">Ackermann Platform</h1>
                 </div>
               </div>
               <div className="flex items-center space-x-4">
@@ -113,7 +113,7 @@ const WelcomePage: React.FC = () => {
             </div>
             
             <h1 className="text-4xl font-bold text-gray-900 mb-4">
-              Welcome to BSM Platform Demo!
+              Welcome to Ackermann Platform!
             </h1>
             
             <p className="text-xl text-gray-600 mb-8">
@@ -195,7 +195,7 @@ const WelcomePage: React.FC = () => {
 
             <div className="mt-8">
               <p className="text-gray-500 text-sm">
-                This is a 15% preview of the BSM Platform. Full features include customer portal, admin dashboard, 
+                This is a 15% preview of the Ackermann Platform. Full features include customer portal, admin dashboard, 
                 workflow builder, knowledge base, and more.
               </p>
             </div>

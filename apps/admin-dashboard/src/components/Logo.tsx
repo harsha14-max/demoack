@@ -1,22 +1,19 @@
 import React from 'react';
+import AckermannLogo from './AckermannLogo';
 
 interface LogoProps {
   size?: number;
   className?: string;
+  variant?: 'full' | 'icon' | 'text';
 }
 
-const Logo: React.FC<LogoProps> = ({ size = 48, className = '' }) => {
+const Logo: React.FC<LogoProps> = ({ size = 48, className = '', variant = 'full' }) => {
   return (
-    <div className={`relative ${className}`} style={{ width: size, height: size }}>
-      <img
-        src="/logo.png"
-        alt="BSM Logo"
-        width={size}
-        height={size}
-        className="drop-shadow-xl"
-        style={{ objectFit: 'contain' }}
-      />
-    </div>
+    <AckermannLogo 
+      size={size} 
+      className={className} 
+      variant={variant}
+    />
   );
 };
 

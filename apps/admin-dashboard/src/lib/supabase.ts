@@ -8,14 +8,14 @@ const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || 'eyJhbGciOi
 const isRealSupabase = supabaseUrl === 'https://fcdfwqengcmtsatrkwin.supabase.co';
 
 if (isRealSupabase) {
-  console.log('🚀 Connected to real Supabase project for BSM Platform');
+  console.log('🚀 Connected to real Supabase project for Ackermann Platform');
 } else {
   console.log('⚠️ Using fallback Supabase configuration');
 }
 
 export const supabase = createClient(supabaseUrl, supabaseAnonKey);
 
-// Database types for BSM Platform
+// Database types for Ackermann Platform
 export interface Database {
   public: {
     Tables: {

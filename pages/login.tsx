@@ -5,8 +5,8 @@ import { createClient } from '@supabase/supabase-js';
 import { Mail, Lock, Eye, EyeOff, ArrowRight, User, Home } from 'lucide-react';
 
 // Supabase client
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!;
-const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!;
+const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || 'https://zrxoiqhivfkgzvyoobki.supabase.co';
+const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InpyeG9pcWhpdmZrZ3p2eW9vYmtpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzUzMjQ4MDAsImV4cCI6MjA1MDkwMDgwMH0.YourAnonKeyHere';
 const supabase = createClient(supabaseUrl, supabaseAnonKey);
 
 const LoginPage: React.FC = () => {
@@ -90,8 +90,8 @@ const LoginPage: React.FC = () => {
   return (
     <>
       <Head>
-        <title>DemoAck - BSM Platform Login</title>
-        <meta name="description" content="Login to BSM Platform Demo" />
+        <title>Ackermann Platform Login</title>
+        <meta name="description" content="Login to Ackermann Platform" />
       </Head>
 
       <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
@@ -102,7 +102,7 @@ const LoginPage: React.FC = () => {
               <Home className="h-8 w-8 text-blue-600" />
             </div>
             <h2 className="text-3xl font-bold text-gray-900">
-              DemoAck - BSM Platform
+              Ackermann Platform
             </h2>
             <p className="mt-2 text-sm text-gray-600">
               {isLogin ? 'Sign in to access the demo' : 'Create your demo account'}

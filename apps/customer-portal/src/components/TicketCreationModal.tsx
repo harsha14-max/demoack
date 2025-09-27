@@ -176,7 +176,7 @@ export default function TicketCreationModal({ onClose, onSubmit }: TicketCreatio
                   <button
                     key={category.id}
                     type="button"
-                    onClick={() => setFormData(prev => ({ ...prev, category: category.id }))}
+                    onClick={() => setFormData(prev => ({ ...prev, category: category.id as 'technical' | 'billing' | 'general' | 'feature_request' | 'bug_report' }))}
                     className={`p-3 rounded-lg border-2 transition-all ${
                       formData.category === category.id
                         ? 'border-primary-500 bg-primary-50 dark:bg-primary-900 dark:border-primary-400'
@@ -207,7 +207,7 @@ export default function TicketCreationModal({ onClose, onSubmit }: TicketCreatio
                   <button
                     key={priority.id}
                     type="button"
-                    onClick={() => setFormData(prev => ({ ...prev, priority: priority.id }))}
+                    onClick={() => setFormData(prev => ({ ...prev, priority: priority.id as 'low' | 'medium' | 'high' | 'urgent' }))}
                     className={`p-2 rounded-lg border-2 transition-all ${
                       formData.priority === priority.id
                         ? 'border-primary-500 bg-primary-50 dark:bg-primary-900 dark:border-primary-400'
